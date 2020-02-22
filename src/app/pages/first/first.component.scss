@@ -1,0 +1,156 @@
+@import '../../../styles.scss';
+
+.label{
+    margin-right: 20px;
+    text-align: right;
+    width: 180px;
+}
+
+// On Off CSS here 
+
+.onoffswitch {
+    position: relative; 
+    width: 45px;
+    -webkit-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 2px solid $primary; 
+    margin-bottom: 0;
+    border-radius: 21px;
+}
+.onoffswitch-inner {
+    display: block; 
+    width: 200%; 
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; 
+    float: left; 
+    width: 50%; 
+    height: 23px; 
+    padding: 0; 
+    font-size: 0;
+    line-height: 23px; 
+    color:$white-color; 
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 0px;
+    background-color: $primary;
+    color: $white-color;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 0px;
+    background-color: $primary;
+    color: $white-color;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; 
+    width: 23px; 
+    height: 23px;
+    margin: 1.5px;
+    background: $black-color;
+    position: absolute; 
+    top: 0; 
+    bottom: 0;
+    right: 19px;
+    border: 2px solid $primary; 
+    border-radius: 21px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+.form{
+    .from-group{
+        padding-bottom: 10px;
+            .form-control{
+                display: inline-block;
+                color: $primary;
+                background-color: $secondary;
+                border-radius: 0;
+                font-size: 15px;
+                height: auto;
+                max-width: 210px;
+                padding: 2px 8px;
+                border: 0;
+                    &:focus{
+                        border-color: $primary;
+                        box-shadow: none;
+                    }
+            } 
+            .dropdown-group{
+                background: $secondary;
+                color: $primary;
+                padding: 1px 10px;
+                text-align: left;
+                width: 210px;
+                border-radius: 0;
+            }
+            .dropdown-item{
+                color: $primary;
+                font-size: 14px;
+            }
+            input::placeholder{
+                color: $primary;
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+    }
+    .model-id{
+        width: 73px;
+    }
+    .faqs{
+        .label{
+            text-transform: initial;
+            width: 428px;
+        }
+        input::placeholder{
+            font-size: 0;
+        }
+        .form-control{
+            margin: 5px;
+            padding: 2px 10px;
+        }
+    }
+}
+.save-button{
+    background: darken($white-color, 85%);
+    color: $primary;
+    border: 0;
+    border-radius: 20px;
+    text-transform: capitalize;
+    padding: 3px 20px;
+}
+
+
+.dropdown.multiselect input[type="checkbox"] {
+	display: none;
+}
+
+.dropdown.multiselect input[type="checkbox"] + label:before {
+	content: '\00a0';
+	width: 15px;
+	display: inline-block;
+	padding-right: 20px;
+}
+
+.dropdown.multiselect input[type="checkbox"]:checked + label:before {
+	content: '\2714';
+	padding-right: 20px;
+}
