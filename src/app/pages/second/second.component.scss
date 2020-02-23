@@ -1,6 +1,41 @@
 @import '../../../styles.scss';
 
 .select-model-section{
+
+    .dropdown-icon{
+        position: absolute;
+        right: 8px;
+        top: 4px;
+    }
+    .primary-dropdown{
+        background: $secondary;
+        color: $primary;
+        border: 0;
+        min-width: 210px;
+        padding: 2px 38px 2px 15px;
+        margin-left: 15px;
+        border-radius: 0;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+    .dropdown-menu{
+        background: $secondary;
+        border-radius: 0;
+        padding: 7px 8px;
+        min-width: 210px;
+            .dropdown-item{
+                color: $primary;
+                padding: 4px 7px;
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+            .dropdown-item:focus, 
+            .dropdown-item:hover{
+                background: transparent;
+                color: $primary;
+            }
+    }
     .faqs-secion{
         .img-size-label{
             color: $secondary-text;  

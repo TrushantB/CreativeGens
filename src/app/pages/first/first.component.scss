@@ -93,55 +93,104 @@
                         border-color: $primary;
                         box-shadow: none;
                     }
-            } 
-            .dropdown-group{
-                background: $secondary;
-                color: $primary;
-                padding: 1px 10px;
-                text-align: left;
-                width: 210px;
-                border-radius: 0;
-            }
-            .dropdown-item{
-                color: $primary;
-                font-size: 14px;
             }
             input::placeholder{
                 color: $primary;
                 font-size: 12px;
                 text-transform: uppercase;
             }
+            .add-new-button{
+                font-size: 13px;
+                text-transform: uppercase;
+                background: transparent;
+                border: 0;
+                margin-left: 2px;
+                border-radius: 0;
+                color: $primary;
+                    
+            }
+            button:focus{
+                outline: 0;
+            }
+            .dropdown-icon{
+                position: absolute;
+                right: 8px;
+                top: 4px;
+            }
+            .dropdown{
+                .primary-dropdown{
+                    background: $secondary;
+                    color: $primary;
+                    border: 0;
+                    min-width: 210px;
+                    padding: 2px 8px;
+                    border-radius: 0;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+                .dropdown-menu{
+                    background: $secondary;
+                    color: $primary;
+                    border-radius: 0;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    padding: 7px 8px;
+                    min-width: 210px;
+                    .custom-control-input:checked~.custom-control-label{
+                        &::before{
+                            color: $primary;
+                            content: '\2713';
+                            top: -4px;
+                            left: -19px;
+                            font-size: 20px;
+                            border-color: transparent;
+                            background-color: transparent;
+                        }
+                    }
+                    .custom-control{
+                        padding-left: 17px;
+                        padding-bottom: 8px;
+                    }
+                    .custom-checkbox .custom-control-label{
+                        &::before{
+                            color: $primary;
+                            box-shadow: none;
+                            border: 0;
+                            background: transparent;
+                        }
+                    }
+                    .custom-control-label{
+                        &::after{
+                            position: absolute;
+                            top: 0;
+                            left: -29PX;
+                            display: block;
+                            width: 24px;
+                            background-image: none;
+                            height: 25px;
+                        }
+                    }
+                }
+            }
     }
     .model-id{
         width: 73px;
     }
     .faqs{
+        display: -webkit-box;
         .label{
             text-transform: initial;
-            width: 428px;
         }
         input::placeholder{
             font-size: 0;
         }
         .form-control{
-            margin: 5px;
+            display: block;
+            margin: 0;
+            margin-right: 10px;
             padding: 2px 10px;
+            margin-bottom: 10px;
         }
     }
-}
-
-.dropdown.multiselect input[type="checkbox"] {
-	display: none;
-}
-
-.dropdown.multiselect input[type="checkbox"] + label:before {
-	content: '\00a0';
-	width: 15px;
-	display: inline-block;
-	padding-right: 20px;
-}
-
-.dropdown.multiselect input[type="checkbox"]:checked + label:before {
-	content: '\2714';
-	padding-right: 20px;
 }

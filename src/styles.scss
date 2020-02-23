@@ -1,4 +1,5 @@
 
+
 // Color Varibles here
 
 $primary: #379da9;
@@ -66,6 +67,10 @@ html,body{
 ::selection{
     background: $primary;
     color: $white-color;
+}
+input:focus{
+    box-shadow: none;
+    outline: -webkit-focus-ring-color auto 0px;
 }
 .btn.focus,
 .btn:focus {
