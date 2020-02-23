@@ -5,7 +5,8 @@ $primary: #379da9;
 $secondary: #171916;
 $black-color: #000;
 $white-color: #fff;
-$footer-text: #485249;
+$secondary-text: #485249;
+$bg-button: #354141;
 
 // fonts
 
@@ -64,6 +65,7 @@ html,body{
 }
 ::selection{
     background: $primary;
+    color: $white-color;
 }
 .btn.focus,
 .btn:focus {
@@ -102,4 +104,13 @@ a{
     font-size: 15px;
     margin-bottom: 0;
     vertical-align: middle;
+}
+.button{
+    background: $bg-button;
+    color: $primary;
+    border: 0;
+    font-size: 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 3px 20px;
 }
