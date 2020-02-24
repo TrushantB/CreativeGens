@@ -124,6 +124,7 @@
                     color: $primary;
                     border: 0;
                     min-width: 210px;
+                    position: absolute;
                     padding: 2px 8px;
                     border-radius: 0;
                     font-size: 15px;
@@ -131,6 +132,8 @@
                     text-align: left;
                 }
                 .dropdown-menu{
+                    position: inherit;
+                    top:26px;
                     background: $secondary;
                     color: $primary;
                     border-radius: 0;
@@ -199,7 +202,7 @@
             display: block;
             margin: 0;
             font-size: 13px;
-            margin-right: 20px;
+            margin-right: 40px;
             padding: 1px 10px;
             margin-bottom: 10px;
         }

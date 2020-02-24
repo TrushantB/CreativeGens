@@ -33,8 +33,8 @@
               "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.slim.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.popper.min.js",
+              "src/app/components/common/js/bootstrap.slim.min.js",
+              "src/app/components/common/js/bootstrap.popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
