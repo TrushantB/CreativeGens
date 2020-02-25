@@ -10,6 +10,8 @@ import { SecondComponent } from './pages/second/second.component';
 import { ThirdComponent } from './pages/third/third.component';
 import { FourthComponent } from './pages/fourth/fourth.component';
 import { FifthComponent } from './pages/fifth/fifth.component';
+import { LightboxModule } from 'ngx-lightbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { FifthComponent } from './pages/fifth/fifth.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

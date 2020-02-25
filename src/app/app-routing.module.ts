@@ -5,10 +5,9 @@ import { SecondComponent } from './pages/second/second.component';
 import { ThirdComponent } from './pages/third/third.component';
 import { FourthComponent } from './pages/fourth/fourth.component';
 import { FifthComponent } from './pages/fifth/fifth.component';
-
 const routes: Routes = [
   {
-    path: 'first',
+    path: '',
     component: FirstComponent
   },
   {

@@ -113,7 +113,7 @@
                 background: $secondary;
                 
                 input{
-                    border: 1px solid darken($primary, 10%);
+                    border: 1px solid darken($primary, 25%);
                     padding-left: 6px;
                     font-size: 13px;
                     &::placeholder{
@@ -218,6 +218,11 @@
         margin-left: 10px;
     }
     .faqs{
+        .plus-icon{
+            color: $primary;
+            font-size: 14px;
+            cursor: pointer;
+        }
         display: -webkit-box;
         .label{
             text-transform: initial;
