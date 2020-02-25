@@ -10,7 +10,6 @@ import { SecondComponent } from './pages/second/second.component';
 import { ThirdComponent } from './pages/third/third.component';
 import { FourthComponent } from './pages/fourth/fourth.component';
 import { FifthComponent } from './pages/fifth/fifth.component';
-
 @NgModule({
   declarations: [
     AppComponent,

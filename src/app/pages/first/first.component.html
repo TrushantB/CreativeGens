@@ -21,13 +21,13 @@
                         <label class="label ">Model name</label>
                         <input type="text" class="form-control"/>
                     </div>
-                    <div class="from-group d-flex mb-4 ">
+                    <div class="from-group d-flex ">
                         <label class="label ">INPUT IMAGES</label>
-                        <div class="dropdown show">
-                            <button class="btn primary-dropdown " type="button" id="dropdownMenuButton"  >
+                        <div class="dropdown ">
+                            <button class="btn primary-dropdown " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >
                                 choose type <i class="fa fa-chevron-down dropdown-icon" aria-hidden="true"></i>
                             </button>
-                            <form class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+                            <form class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="customCheckBox1">
                                     <label class="custom-control-label" for="customCheckBox1">orignal image</label>
@@ -44,7 +44,10 @@
                                     <input type="checkbox" class="custom-control-input" id="customCheckBox4">
                                     <label class="custom-control-label" for="customCheckBox4">sketch image</label>
                                 </div>
-                                <div>
+                                <div class="add-new">
+                                    <input type="text" class="form-control " placeholder="Add New"/>
+                                </div>
+                                <div class="custom-control custom-checkbox pl-2">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                     <button class="add-new-button">
                                         add new
@@ -53,13 +56,13 @@
                             </form>
                         </div>
                     </div>
-                    <div class="from-group d-flex mb-4 ">
+                    <div class="from-group d-flex ">
                             <label class="label ">OUTPUT IMAGES</label>
-                            <div class="dropdown show">
-                                <button class="btn primary-dropdown " type="button" id="dropdownMenuButton" >
+                            <div class="dropdown">
+                                <button class="btn primary-dropdown " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                     choose type <i class="fa fa-chevron-down dropdown-icon" aria-hidden="true"></i>
                                 </button>
-                                <form class="dropdown-menu show" aria-labelledby="dropdownMenuButton">
+                                <form class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheckBox5">
                                         <label class="custom-control-label" for="customCheckBox5"> intermediate</label>
@@ -68,7 +71,10 @@
                                         <input type="checkbox" class="custom-control-input" id="customCheckBox6">
                                         <label class="custom-control-label" for="customCheckBox6"> final</label>
                                     </div>
-                                    <div>
+                                    <div class="add-new">
+                                        <input type="text" class="form-control " placeholder="Add New"/>
+                                    </div>
+                                    <div class="custom-control custom-checkbox pl-2">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                         <button class="add-new-button">
                                             add new

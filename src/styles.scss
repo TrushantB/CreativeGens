@@ -1,5 +1,4 @@
 
-
 // Color Varibles here
 
 $primary: #379da9;
@@ -118,4 +117,7 @@ a{
     border-radius: 20px;
     text-transform: uppercase;
     padding: 3px 20px;
+        &:hover{
+            background: darken($bg-button,10%);
+        }
 }
