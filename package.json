@@ -19,14 +19,16 @@
     "@angular/platform-browser": "~9.0.2",
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
+    "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "json-server": "^0.16.1",
     "ngx-gallery": "^5.10.0",
     "ngx-lightbox": "^2.1.1",
+    "ngx-owl-carousel-o": "^2.0.3",
+    "ngx-slider": "0.0.5",
     "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
+    "tslib": "^1.11.1",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

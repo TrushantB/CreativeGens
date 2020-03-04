@@ -1281,6 +1281,11 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+animate.css@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.2.tgz#e73e0d50e92cb1cfef1597d9b38a9481020e08ea"
+  integrity sha512-0bE8zYo7C0KvgOYrSVfrzkbYk6IOTVPNqkiHg2cbyF4Pq/PXzilz4BRWA3hwEUBoMp5VBgrC29lQIZyhRWdBTw==
+
 ansi-align@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-3.0.0.tgz#b536b371cf687caaef236c18d3e21fe3797467cb"
@@ -5772,6 +5777,18 @@ ngx-lightbox@^2.1.1:
   resolved "https://registry.yarnpkg.com/ngx-lightbox/-/ngx-lightbox-2.1.2.tgz#e00204fd14aa041a5a50f4959dc71e7c2c1c3127"
   integrity sha512-l2xBjcYGsU4+5aK7MkNbKGfTbuO3E8EBaCXXTsWnzP5gX+CBK4WEJPEgU0u4YvIwt4n2/JX6a9+lJwicSPjkMA==
 
+ngx-owl-carousel-o@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/ngx-owl-carousel-o/-/ngx-owl-carousel-o-2.0.3.tgz#e21d30476271932f5281d64c388b7faab5ebdac4"
+  integrity sha512-GZHa7GHvoRyKIrhklDLg5YHmd3QWtAV1jycom28VEV2dPCca1Mb6Qu8YpTMpsUqO+sfsIitTuWjXQphzWRPVfg==
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-slider@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/ngx-slider/-/ngx-slider-0.0.5.tgz#0d3a94b56cf400c6c9067e12595868a4ebe9bdb7"
+  integrity sha512-HLwNkPEEmjZWsHS+i9BMkGltA54A8zikMktOH7T53PCoAjkZXhdrAgIKE2cmYhbgSFyxOvq7PoBi/V+AmBBP/w==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -8434,7 +8451,12 @@ tslib@1.10.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 
-tslib@^1.10.0, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.1.tgz#eb15d128827fbee2841549e171f45ed338ac7e35"
+  integrity sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.11.0.tgz#f1f3528301621a53220d58373ae510ff747a66bc"
   integrity sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
