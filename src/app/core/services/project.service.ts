@@ -13,7 +13,7 @@ export class ProjectService {
 
   getModel() {
     this.url=`${environment.api}Model`;
-    this.baseService.getData(this.url)
+    return  this.baseService.getData(this.url)
   }
 
   getModelById(id) {
@@ -26,13 +26,23 @@ export class ProjectService {
     this.baseService.postData(this.url,data)
   }
 
-  getInputImagesType (id) {
-    this.url=`${environment.api}InputImagesType&modelId=${id}`;
-    this.baseService.getData(this.url)
+  getInputImagesType () {
+    this.url=`${environment.api}InputImagesType`;
+    return this.baseService.getData(this.url)
   }
 
   postInputImagesType (data) {
     this.url=`${environment.api}InputImagesType`;
-    this.baseService.postData(this.url,data)
+    return this.baseService.postData(this.url,data)
+  }
+
+  getOutputImagesType () {
+    this.url=`${environment.api}OutputImagesType`;
+    return this.baseService.getData(this.url)
+  }
+
+  postOutputImagesType (data) {
+    this.url=`${environment.api}OutputImagesType`;
+    return this.baseService.postData(this.url,data)
   }
 }

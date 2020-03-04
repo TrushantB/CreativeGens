@@ -15,6 +15,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { from } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import {FormsModule} from '@angular/forms';  
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LightboxModule,
     HttpClientModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
     
   ],
   providers: [],

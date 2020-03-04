@@ -1,114 +1,120 @@
-
 {
-  "Model":[
-	{
-        "id":1,
-		"modelId" : 1,
-		"modelName": "IMITATE_TEXTURE",
-		"maxInputsize":520,
-		"maxImaegeSize": 5
-	},
-	{
-        "id":2,
-		"modelId" : 2,
-		"modelName": "REVAMP_LOWEREAR",
-		"maxInputsize": 320,
-		"maxImaegeSize": 2
-	}
+  "Model": [
+    {
+      "id": 1,
+      "modelId": 1,
+      "modelName": "IMITATE_TEXTURE",
+      "maxInputsize": 520,
+      "maxImaegeSize": 5
+    },
+    {
+      "id": 2,
+      "modelId": 2,
+      "modelName": "REVAMP_LOWEREAR",
+      "maxInputsize": 320,
+      "maxImaegeSize": 2
+    }
   ],
   "InputImagesDetails": [
-	{
-		  "id": 1,
-		  "modelId" : 1,
-		  "inputImagesTypeId": 1, 
-		  "imgPath": "D:/InputImage/1.jpg"
-	},
-	{
-		  "id": 2,
-		  "modelId" : 1,
-		  "inputImagesTypeId": 2, 
-		  "imgPath": "D:/InputImage/2.jpg"
-	},
-	{
-		  "id": 3,
-		  "modelId" : 2,
-		  "inputImagesTypeId": 3, 
-		  "imgPath": "D:/InputImage/3.jpg"
-	}
+    {
+      "id": 1,
+      "modelId": 1,
+      "inputImagesTypeId": 1,
+      "imgPath": "D:/InputImage/1.jpg"
+    },
+    {
+      "id": 2,
+      "modelId": 1,
+      "inputImagesTypeId": 2,
+      "imgPath": "D:/InputImage/2.jpg"
+    },
+    {
+      "id": 3,
+      "modelId": 2,
+      "inputImagesTypeId": 3,
+      "imgPath": "D:/InputImage/3.jpg"
+    }
   ],
   "OutputImagesDetails": [
-	{
-		  "id": 1,
-		  "modelId" : 1,
-		  "outputImagesTypeId": 1, 
-		  "imgPath": "D:/OutputImage/1.jpg"
-	},
-	{
-		  "id": 2,
-		  "modelId" : 1,
-		  "outputImagesTypeId": 2, 
-		  "imgPath": "D:/OutputImage/2.jpg"
-	},
-	{
-		  "id": 3,
-		  "modelId" : 2,
-		  "outputImagesTypeId": 3,
-		  "imgPath": "D:/OutputImage/1.jpg"
-	}
-  ],  
-  "InputImagesType":[
-		{
-		  "id": 1,
-		  "name": "ORIGINAL IMAGE"
-		},
-		{
-		  "id": 2,
-		  "name": "SEGMENTED IMAGE"
-		},
-		{
-		  "id": 3,
-		  "name": "TEXTURE IMAGE"
-		},
-		{
-		  "id": 4,
-		  "name": "SKETCH IMAGE"
-		}
+    {
+      "id": 1,
+      "modelId": 1,
+      "outputImagesTypeId": 1,
+      "imgPath": "D:/OutputImage/1.jpg"
+    },
+    {
+      "id": 2,
+      "modelId": 1,
+      "outputImagesTypeId": 2,
+      "imgPath": "D:/OutputImage/2.jpg"
+    },
+    {
+      "id": 3,
+      "modelId": 2,
+      "outputImagesTypeId": 3,
+      "imgPath": "D:/OutputImage/1.jpg"
+    }
   ],
-  "OutputImagesType":[
-		{
-		  "id": 1,
-		  "name": "INTERMIDATE IMAGE"
-		},
-		{
-		  "id": 2,
-		  "name": "FINAL IMAGE"
-		}
-	],
-	"FAQ":[
-		{
-			"id": 1,
-			"modelId": 1,
-			"question": "Maximum Image Size?",
-			"answer": "512X512"
-		},
-		{
-			"id": 2,
-			"modelId": 1,
-			"question": "Minimum Image Size?",
-			"answer": "512X512"
-		},
-		{
-			"id": 3,
-			"modelId": 1,
-			"question": "Number of images can upload?",
-			"answer": "unlimited"
-		}
-		,
-		{
-			"id": 4,
-			"modelId": 2,
-			"question": "Can we change the size of image",
-			"answer": "Yes"
-		}
-	]
-  }
+  "InputImagesType": [
+    {
+      "id": 1,
+      "name": "ORIGINAL IMAGE"
+    },
+    {
+      "id": 2,
+      "name": "SEGMENTED IMAGE"
+    },
+    {
+      "id": 3,
+      "name": "TEXTURE IMAGE"
+    },
+    {
+      "id": 4,
+      "name": "SKETCH IMAGE"
+    },
+    {
+      "name": "TEMP",
+      "id": 5
+    }
+  ],
+  "OutputImagesType": [
+    {
+      "id": 1,
+      "name": "INTERMIDATE IMAGE"
+    },
+    {
+      "id": 2,
+      "name": "FINAL IMAGE"
+    },
+    {
+      "name": "TEST",
+      "id": 3
+    }
+  ],
+  "FAQ": [
+    {
+      "id": 1,
+      "modelId": 1,
+      "question": "Maximum Image Size?",
+      "answer": "512X512"
+    },
+    {
+      "id": 2,
+      "modelId": 1,
+      "question": "Minimum Image Size?",
+      "answer": "512X512"
+    },
+    {
+      "id": 3,
+      "modelId": 1,
+      "question": "Number of images can upload?",
+      "answer": "unlimited"
+    },
+    {
+      "id": 4,
+      "modelId": 2,
+      "question": "Can we change the size of image",
+      "answer": "Yes"
+    }
+  ]
+}
