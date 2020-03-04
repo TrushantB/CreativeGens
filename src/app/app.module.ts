@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -11,6 +12,8 @@ import { ThirdComponent } from './pages/third/third.component';
 import { FourthComponent } from './pages/fourth/fourth.component';
 import { FifthComponent } from './pages/fifth/fifth.component';
 import { LightboxModule } from 'ngx-lightbox';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { LightboxModule } from 'ngx-lightbox';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LightboxModule
+    LightboxModule,
+    CarouselModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
