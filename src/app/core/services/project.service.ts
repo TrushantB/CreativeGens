@@ -13,27 +13,43 @@ export class ProjectService {
 
   getModel() {
     this.url=`${environment.api}Model`;
-    return  this.baseService.getData(this.url)
+    return  this.baseService.getData(this.url);
   }
 
   getModelById(id) {
     this.url=`${environment.api}Model&modelId=${id}`;
-    this.baseService.getData(this.url)
+    return this.baseService.getData(this.url)
   }
 
   postModel(data) {
     this.url=`${environment.api}Model`;
-    this.baseService.postData(this.url,data)
+    return this.baseService.postData(this.url,data)
   }
 
   getInputImagesType () {
     this.url=`${environment.api}InputImagesType`;
     return this.baseService.getData(this.url)
   }
+  getInputImagesTypeById (id) {
+    this.url=`${environment.api}InputImagesType/${id}`;
+    return this.baseService.getData(this.url);
+  }
+  getOutputImagesTypeById(id) {
+    this.url=`${environment.api}OutputImagesType/${id}`;
+    return this.baseService.getData(this.url)
+  }
 
   postInputImagesType (data) {
     this.url=`${environment.api}InputImagesType`;
     return this.baseService.postData(this.url,data)
+  }
+  deleteInputImagesType(id) {
+    this.url=`${environment.api}InputImagesType/${id}`;
+    return this.baseService.deleteData(this.url)
+  }
+  deleteOutputImagesType(id) {
+    this.url=`${environment.api}OutputImagesType/${id}`;
+    return this.baseService.deleteData(this.url)
   }
 
   getOutputImagesType () {
@@ -44,5 +60,24 @@ export class ProjectService {
   postOutputImagesType (data) {
     this.url=`${environment.api}OutputImagesType`;
     return this.baseService.postData(this.url,data)
+  }
+
+  getFAQ () {
+    this.url=`${environment.api}FAQ`;
+    return this.baseService.getData(this.url);
+  }
+  getFAQByModelId(id) {
+    this.url=`${environment.api}FAQ?modelId=${id}`;
+    return this.baseService.getData(this.url);
+  }
+
+  postFAQ (data) {
+    this.url=`${environment.api}FAQ`;
+    return this.baseService.postData(this.url,data)
+  }
+
+  getGallery() {
+    this.url=`${environment.api}Gallery`;
+    return this.baseService.getData(this.url)
   }
 }

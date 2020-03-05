@@ -2,7 +2,7 @@
     <div class="row align-items-center justify-content-center">
         <div class="col-8 pt-2 pb-2 pb-sm-5 pt-sm-5">
             <div>
-                <form class="form" (submit)="submit()">
+                <form [formGroup]='validateModel' class="form"  (ngSubmit)="submit()">
                     <div class="on-off-control d-flex from-group">
                         <label for="" class="label mr-4">Enable Model</label>
                         <div class="onoffswitch">
@@ -15,25 +15,26 @@
                     </div>
                     <div class="from-group">
                         <label class="label ">Model ID</label>
-                        <input type="text" class="form-control sm-input"/>
+                        <input type="text" class="form-control sm-input" formControlName="modelId"/>
                     </div>
                     <div class="from-group">
                         <label class="label ">Model name</label>
-                        <input type="text" class="form-control"/>
+                        <input type="text" class="form-control" formControlName="modelName"/>
                     </div>
                     <div class="from-group d-flex ">
                         <label class="label ">INPUT IMAGES</label>
-                        <div class="dropdown show">
+                        <div class="dropdown">
                             <button class="btn primary-dropdown " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 choose type <i class="fa fa-chevron-down dropdown-icon" aria-hidden="true"></i>
                             </button>
                             <form class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                                <div class="custom-control custom-checkbox" *ngFor="let item of inputImagesData; let i=index">
-                                    <input type="checkbox" class="custom-control-input" id="{{i}}" [checked]="item.check" (click)="checkHandle(item)">
-                                    <label class="custom-control-label" for="{{i}}" >{{item.name}}</label>
+                                <div class="custom-control custom-checkbox justify-content-center" *ngFor="let item of inputImagesData; let i=index">
+                                    <input type="checkbox" class="custom-control-input" id="input{{i}}" [checked]="item.check" (click)="checkInputImages(item,i)">
+                                    <label class="custom-control-label" for="input{{i}}" >{{item.name}}</label>
+                                    <i _ngcontent-uuw-c18="" aria-hidden="true" class="fa fa-minus plus-icon dropdown-icon" (click)="removeInputImage(item)"></i>
                                 </div>
                                 <div class="add-new">
-                                    <input type="text" class="form-control " placeholder="Add New" name="inputImage" [(ngModel)]="inputImage" autocomplete="false"/>
+                                    <input type="text" class="form-control " placeholder="Add New" name="inputImage" [(ngModel)]="inputImage" [ngModelOptions]="{standalone: true}" autocomplete="false"/>
                                 </div>
                                 <div class="custom-control custom-checkbox pl-2"  (click)="addInputImage()">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -52,11 +53,12 @@
                             </button>
                             <form class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="custom-control custom-checkbox" *ngFor="let item of outputImagesData; let i=index">
-                                    <input type="checkbox" class="custom-control-input" id="{{i}}" (click)="checkHandle(item)" >
-                                    <label class="custom-control-label" for="{{i}}">{{item.name}}</label>
+                                    <input type="checkbox" class="custom-control-input" id="output{{i}}" [checked]="item.check" (click)="checkOutputImages(item,i)"  >
+                                    <label class="custom-control-label" for="output{{i}}">{{item.name}}</label>
+                                    <i _ngcontent-uuw-c18="" aria-hidden="true" class="fa fa-minus plus-icon dropdown-icon" (click)="removeOutputImage(item)"></i>
                                 </div>
                                 <div class="add-new">
-                                    <input type="text" class="form-control " placeholder="Add New" name="outputImage" [(ngModel)]="outputImage" autocomplete="false"/>
+                                    <input type="text" class="form-control " placeholder="Add New" name="outputImage" [(ngModel)]="outputImage" [ngModelOptions]="{standalone: true}" autocomplete="false"/>
                                 </div>
                                 <div class="custom-control custom-checkbox pl-2" (click)="addOutputImage()">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -69,11 +71,11 @@
                     </div>
                     <div class="from-group">
                         <label class="label ">MAX INPUT SIZE</label>
-                        <input type="text " class="form-control sm-input"/>
+                        <input type="text " class="form-control sm-input" formControlName="inputSize"/>
                     </div>
                     <div class="from-group">
                         <label class="label ">MAXiMUM IMAGE SIZE</label>
-                        <input type="text" class="form-control xs-input"/>
+                        <input type="text" class="form-control xs-input" formControlName="imageSize"/>
                         <span class="image-size">MB</span>
                     </div>
                     <div class="from-group faqs" >
@@ -81,11 +83,11 @@
                             <div>
                                 <div class="from-group faqs">
                                     <div class="input-type-group">
-                                        <input type="text" class="form-control" name="FAQquestion"  [(ngModel)]="FAQquestion"/>
+                                        <input type="text" class="form-control" name="FAQquestion"  [(ngModel)]="FAQquestion" [ngModelOptions]="{standalone: true}"/>
                                         
                                     </div>
                                     <div class="input-type-group">
-                                        <input type="text" class="form-control" name="FAQanswer" [(ngModel)]="FAQanswer"/>
+                                        <input type="text" class="form-control" name="FAQanswer" [(ngModel)]="FAQanswer" [ngModelOptions]="{standalone: true}"/>
                                     
                                     </div>
                                     
@@ -106,7 +108,7 @@
                         
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button class="button" type="submit">
+                        <button class="button" type="submit"  >
                             save
                         </button>
                     </div>

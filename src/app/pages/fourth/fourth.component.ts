@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { ProjectService } from 'src/app/core/services/project.service';
 
 interface Image {
+  id?:number,
   src: string;
-  title?: string;
+  tag?: string;
   alt?: string;
 }
 
@@ -15,64 +17,58 @@ interface Image {
   styleUrls: ['./fourth.component.scss']
 })
 export class FourthComponent implements OnInit {
-
-  constructor() { }
+public imagesDataStore:Image[]=[];
+public imagesData:Image[]=[];
+public modelData=[];
+public selectedModel=null;
+  url: string | ArrayBuffer;
+  constructor(public projectService:ProjectService) { }
 
   ngOnInit(): void {
-
-
+this.loadModels();
     
-
+ this.projectService.getGallery().subscribe((response:Image[]) => {
+   this.imagesDataStore=response;
+   this.imagesData=response;
+ })
   }
 
+  loadModels() {
+    this.projectService.getModel().subscribe((response:any) => {
+      this.modelData=response;
+      this.selectedModel=response[0];
+    })
+  }
 
-  imagesData: Image[] = [
-    {
-      src: 'assets/images/empty_image.png',
-      alt: '',
-      title: ''
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: 'image',
-      title: 'image'
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: 'image',
-      title: 'image'
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: '',
-      title: ''
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: 'image',
-      title: 'image'
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: 'image',
-      title: 'image'
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: '',
-      title: ''
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: 'image',
-      title: 'image'
-    },
-    {
-      src: 'assets/images/empty_image.png',
-      alt: 'image',
-      title: 'image'
-    },
-  ]
+  selectModel(event) {
+    console.log(this.selectedModel);
+
+    this.selectedModel=event;
+    this.loadFAQ();
+    this.loadInputOutputImagesTypes();
+  }
+
+  loadFAQ() {
+   this.projectService.getFAQByModelId(this.selectedModel.modelId).subscribe((response) => {
+    this.selectedModel.FAQ=response;
+   })
+  }
+
+  loadInputOutputImagesTypes() {
+    this.selectedModel.inputImagesTypes=[];
+    this.selectedModel.outputImagesTypes=[];
+    this.selectedModel.inputImages.map((item) => {
+      this.projectService.getInputImagesTypeById(item).subscribe((response) => {
+        this.selectedModel.inputImagesTypes.push(response);
+      })
+    })
+
+    this.selectedModel.outputImages.map((item) => {
+      this.projectService.getOutputImagesTypeById(item).subscribe((response) => {
+        this.selectedModel.outputImagesTypes.push(response);
+      })
+    })
+  }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -94,10 +90,22 @@ export class FourthComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 9
+        items: 50
       }
     },
     nav: true
   }
 
+
+  onSelectFile(event,item) {
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        item.url = event.target.result;
+      }
+    }
+  }
 }

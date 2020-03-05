@@ -20,8 +20,8 @@ export class BaseService {
    .pipe(catchError(this.showError));
  }
 
- deleteData(url,id) {
-  return this.http.delete(url,id)
+ deleteData(url) {
+  return this.http.delete(url)
  .pipe(catchError(this.showError));
   }
 

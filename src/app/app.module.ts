@@ -15,7 +15,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { from } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import {FormsModule} from '@angular/forms';  
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { SearchComponent } from './shared/components/search/search.component';  
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {FormsModule} from '@angular/forms';
     SecondComponent,
     ThirdComponent,
     FourthComponent,
-    FifthComponent
+    FifthComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,7 @@ import {FormsModule} from '@angular/forms';
     CarouselModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     
   ],
   providers: [],

@@ -13,6 +13,118 @@
       "modelName": "REVAMP_LOWEREAR",
       "maxInputsize": 320,
       "maxImaegeSize": 2
+    },
+    {
+      "modelId": "1212",
+      "modelName": "MY MODEL",
+      "maxInputsize": "12",
+      "maxImaegeSize": "4",
+      "inputImages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "outputImages": [
+        1,
+        2
+      ],
+      "id": 3
+    },
+    {
+      "modelId": "111",
+      "modelName": "Trushant",
+      "maxInputsize": "12",
+      "maxImaegeSize": "5",
+      "inputImages": [
+        1,
+        2,
+        3
+      ],
+      "outputImages": [
+        1,
+        2
+      ],
+      "id": 4
+    },
+    {
+      "modelId": "111",
+      "modelName": "Trushant",
+      "maxInputsize": "12",
+      "maxImaegeSize": "5",
+      "inputImages": [
+        1,
+        2,
+        3
+      ],
+      "outputImages": [
+        1,
+        2
+      ],
+      "id": 5
+    },
+    {
+      "modelId": "1",
+      "modelName": "t",
+      "maxInputsize": "2",
+      "maxImaegeSize": "1",
+      "inputImages": [
+        1,
+        2,
+        3
+      ],
+      "outputImages": [
+        1,
+        2
+      ],
+      "id": 6
+    },
+    {
+      "modelId": "1",
+      "modelName": "t",
+      "maxInputsize": "2",
+      "maxImaegeSize": "1",
+      "inputImages": [
+        1,
+        2,
+        3
+      ],
+      "outputImages": [
+        1,
+        2
+      ],
+      "id": 7
+    },
+    {
+      "modelId": "1212",
+      "modelName": "Test",
+      "maxInputsize": "12",
+      "maxImaegeSize": "2",
+      "inputImages": [
+        1,
+        2
+      ],
+      "outputImages": [
+        1
+      ],
+      "id": 8
+    },
+    {
+      "modelId": "3",
+      "modelName": "demo",
+      "maxInputsize": "3",
+      "maxImaegeSize": "1",
+      "inputImages": [
+        3,
+        4,
+        6
+      ],
+      "outputImages": [
+        2,
+        1
+      ],
+      "id": 9
     }
   ],
   "InputImagesDetails": [
@@ -75,6 +187,10 @@
     {
       "name": "TEMP",
       "id": 5
+    },
+    {
+      "name": "draft",
+      "id": 6
     }
   ],
   "OutputImagesType": [
@@ -85,10 +201,6 @@
     {
       "id": 2,
       "name": "FINAL IMAGE"
-    },
-    {
-      "name": "TEST",
-      "id": 3
     }
   ],
   "FAQ": [
@@ -115,6 +227,128 @@
       "modelId": 2,
       "question": "Can we change the size of image",
       "answer": "Yes"
+    },
+    {
+      "question": "KOK",
+      "answer": "PA",
+      "modelId": "1212",
+      "id": 5
+    },
+    {
+      "question": "F",
+      "answer": "C",
+      "modelId": "1212",
+      "id": 6
+    },
+    {
+      "question": "Q",
+      "answer": "A",
+      "modelId": "1212",
+      "id": 7
+    },
+    {
+      "question": "d",
+      "answer": "s",
+      "modelId": "1",
+      "id": 8
+    },
+    {
+      "question": "a",
+      "answer": "c",
+      "modelId": "1",
+      "id": 9
+    },
+    {
+      "question": "d",
+      "answer": "s",
+      "modelId": "1",
+      "id": 10
+    },
+    {
+      "question": "a",
+      "answer": "c",
+      "modelId": "1",
+      "id": 11
+    },
+    {
+      "question": "S",
+      "answer": "D",
+      "modelId": "1212",
+      "id": 12
+    },
+    {
+      "question": "s",
+      "answer": "d",
+      "modelId": "3",
+      "id": 13
+    }
+  ],
+  "Gallery": [
+    {
+      "id": 1,
+      "src": "https://i.picsum.photos/id/490/200/200.jpg",
+      "alt": "",
+      "tag": "kitchen"
+    },
+    {
+      "id": 2,
+      "src": "https://i.picsum.photos/id/1005/200/200.jpg",
+      "alt": "",
+      "tag": "man"
+    },
+    {
+      "id": 3,
+      "src": "https://i.picsum.photos/id/180/200/200.jpg",
+      "alt": "",
+      "tag": "laptop"
+    },
+    {
+      "id": 4,
+      "src": "https://i.picsum.photos/id/2/200/200.jpg",
+      "alt": "",
+      "tag": "laptop"
+    },
+    {
+      "id": 5,
+      "src": "https://i.picsum.photos/id/1003/200/200.jpg",
+      "alt": "",
+      "tag": "animal"
+    },
+    {
+      "id": 6,
+      "src": "https://i.picsum.photos/id/1025/200/200.jpg",
+      "alt": "",
+      "tag": "animal"
+    },
+    {
+      "id": 7,
+      "src": "https://i.picsum.photos/id/1012/200/200.jpg",
+      "alt": "",
+      "tag": "man"
+    },
+    {
+      "id": 8,
+      "src": "https://i.picsum.photos/id/1011/200/200.jpg",
+      "alt": "",
+      "tag": "woman"
+    },
+    {
+      "id": 9,
+      "src": "https://i.picsum.photos/id/1027/200/200.jpg",
+      "alt": "",
+      "tag": "woman"
+    },
+    {
+      "id": 10,
+      "src": "https://i.picsum.photos/id/1071/200/200.jpg",
+      "alt": "",
+      "tag": "car"
+    },
+    {
+      "id": 11,
+      "src": "https://i.picsum.photos/id/1072/200/200.jpg",
+      "alt": "",
+      "tag": "car"
     }
   ]
 }
