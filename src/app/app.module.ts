@@ -7,9 +7,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './pages/first/first.component';
 import { SecondComponent } from './pages/second/second.component';
-import { ThirdComponent } from './pages/third/third.component';
-import { FourthComponent } from './pages/fourth/fourth.component';
-import { FifthComponent } from './pages/fifth/fifth.component';
 import { LightboxModule } from 'ngx-lightbox';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
@@ -26,9 +23,6 @@ import { SearchComponent } from './shared/components/search/search.component';
     FooterComponent,
     FirstComponent,
     SecondComponent,
-    ThirdComponent,
-    FourthComponent,
-    FifthComponent,
     SearchComponent
   ],
   imports: [
