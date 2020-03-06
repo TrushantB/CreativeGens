@@ -111,6 +111,9 @@ a{
     margin-bottom: 0;
     vertical-align: middle;
 }
+.custom-control-label{
+    display: block;
+}
 .button{
     background: $bg-button;
     color: $primary;
