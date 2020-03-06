@@ -9,7 +9,7 @@ const routes: Routes = [
     component: FirstComponent
   },
   {
-    path: 'second',
+    path: 'imageGenerator',
     component: SecondComponent
   }
 ];
