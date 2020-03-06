@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProjectService } from 'src/app/core/services/project.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-first',
@@ -21,7 +22,7 @@ export class FirstComponent implements OnInit {
  public outputImagesId=[];
 
 //  public inputImageFlag:boolean=false;
-  constructor(public http:HttpClient,public projectService: ProjectService) { }
+  constructor(public http:HttpClient,public projectService: ProjectService, public router: Router) { }
 
   ngOnInit(): void {
 
@@ -30,7 +31,6 @@ export class FirstComponent implements OnInit {
       'modelName': new FormControl(null, Validators.required),
       'inputSize': new FormControl(null, Validators.required),
       'imageSize': new FormControl(null, Validators.required),
-      'inputImages':new FormControl(null, Validators.required),
     });
 
     this.projectService.getInputImagesType().subscribe((response:any) => {
@@ -47,8 +47,8 @@ export class FirstComponent implements OnInit {
     if(this.validateModel.valid) {
       this.FAQData.map((item) => {
         item.modelId=this.validateModel.get('modelId').value;
-        this.projectService.postFAQ(item).subscribe();
       })
+      this.projectService.postFAQ(this.FAQData).subscribe();
 
       let item={
         modelId: this.validateModel.get('modelId').value,
@@ -62,6 +62,7 @@ export class FirstComponent implements OnInit {
       this.projectService.postModel(item).subscribe((response) => {
          console.log("model register successfully");
          this.validateModel.reset();
+         this.router.navigate(['./imageGenerator']);
       })
 
     } else {
