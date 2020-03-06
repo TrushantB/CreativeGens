@@ -42,35 +42,69 @@
         <!-- <div class="img-size-label">
             max image size : 512 * 512
         </div> -->
-        <div>
-            <button type="button" class="faqs-button mr-3" data-toggle="modal" data-target="#exampleModalCenter">
-                FAQs
-            </button>
-            <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header border-0">
-                            <h5 class="modal-title" id="exampleModalCenterTitle">frequently asked questions?</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                            </button>
+        <div class="content">
+            <label class="faqs-button" for="modal__state">FAQs</label>
+            <input type="checkbox" name="modal__state" id="modal__state" class="modal__state">
+            <div class="modal__overlay">
+                <div class="modal modal-content">
+                    <label for="modal__state" class="modal__overlay-close">
+                        <i  class="fa fa-times"></i>
+                    </label>
+                    <div class="modal-body pt-0">
+                        <div class="que-ans">
+                            <div class="question">
+                                <span class="icon">Q</span>
+                                <span class="text">MAXIMUM IMAGE SIZE</span>
+                            </div>
+                            <div class="answer">
+                            <span class="icon ">A</span>
+                                <span class="text">512*512</span>
+                            </div>
                         </div>
-                        <div class="modal-body pt-0" *ngIf="selectedModel">
-                            <div class="que-ans" *ngFor="let item of selectedModel.FAQ">
-                                <div class="question">
-                                    <span class="icon">Q.</span>
-                                    <span class="text">{{item.question}}</span>
-                                </div>
-                                <div class="answer">
-                                <span class="icon ">A.</span>
-                                    <span class="text">{{item.answer}}</span>
-                                </div>
+                        <div class="que-ans">
+                            <div class="question">
+                                <span class="icon">Q</span>
+                                <span class="text">MAXIMUM IMAGE SIZE</span>
+                            </div>
+                            <div class="answer">
+                            <span class="icon ">A</span>
+                                <span class="text">512*512</span>
+                            </div>
+                        </div>
+                        <div class="que-ans">
+                            <div class="question">
+                                <span class="icon">Q</span>
+                                <span class="text">MAXIMUM IMAGE SIZE</span>
+                            </div>
+                            <div class="answer">
+                            <span class="icon ">A</span>
+                                <span class="text">512*512</span>
+                            </div>
+                        </div>
+                        <div class="que-ans">
+                            <div class="question">
+                                <span class="icon">Q</span>
+                                <span class="text">MAXIMUM IMAGE SIZE</span>
+                            </div>
+                            <div class="answer">
+                            <span class="icon ">A</span>
+                                <span class="text">512*512</span>
+                            </div>
+                        </div>
+                        <div class="que-ans">
+                            <div class="question">
+                                <span class="icon">Q</span>
+                                <span class="text">MAXIMUM IMAGE SIZE</span>
+                            </div>
+                            <div class="answer">
+                            <span class="icon ">A</span>
+                                <span class="text">512*512</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  
     </div>
     <div class="container ">
         <div class="row align-items-center justify-content-center">
