@@ -43,6 +43,10 @@ export class ProjectService {
     this.url=`${environment.api}InputImagesType`;
     return this.baseService.postData(this.url,data)
   }
+  postInputImages (data) {
+    this.url=`${environment.api}InputImagesDetails`;
+    return this.baseService.postData(this.url,data)
+  }
   deleteInputImagesType(id) {
     this.url=`${environment.api}InputImagesType/${id}`;
     return this.baseService.deleteData(this.url)
@@ -79,5 +83,10 @@ export class ProjectService {
   getGallery() {
     this.url=`${environment.api}Gallery`;
     return this.baseService.getData(this.url)
+  }
+
+  getOutputImages(url) {
+    this.url=`${environment.api}OutputImages?${url}`;
+    return this.baseService.getData(this.url);
   }
 }

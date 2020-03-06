@@ -30,6 +30,7 @@ export class FirstComponent implements OnInit {
       'modelName': new FormControl(null, Validators.required),
       'inputSize': new FormControl(null, Validators.required),
       'imageSize': new FormControl(null, Validators.required),
+      'inputImages':new FormControl(null, Validators.required),
     });
 
     this.projectService.getInputImagesType().subscribe((response:any) => {
@@ -42,7 +43,6 @@ export class FirstComponent implements OnInit {
    
   }
   submit() {
-    console.log("submit");
     this.validateModel.valid;
     if(this.validateModel.valid) {
       this.FAQData.map((item) => {
@@ -61,6 +61,7 @@ export class FirstComponent implements OnInit {
 
       this.projectService.postModel(item).subscribe((response) => {
          console.log("model register successfully");
+         this.validateModel.reset();
       })
 
     } else {
@@ -87,8 +88,6 @@ export class FirstComponent implements OnInit {
     else {
       this.inputImagesId.splice(this.inputImagesId.indexOf(event.id),1);
     }
-    console.log(this.inputImagesId);
-    
   }
 
   checkOutputImages(event,index) {
@@ -99,9 +98,6 @@ export class FirstComponent implements OnInit {
     else {
       this.outputImagesId.splice(this.outputImagesId.indexOf(event.id),1)
     }
-
-    console.log(this.outputImagesId);
-    
   }
 
   addInputImage() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ProjectService } from 'src/app/core/services/project.service';
 
 interface Image {
@@ -19,9 +19,10 @@ interface Image {
 export class FourthComponent implements OnInit {
 public imagesDataStore:Image[]=[];
 public imagesData:Image[]=[];
+public outputImages:Image[]=[];
 public modelData=[];
 public selectedModel=null;
-  url: string | ArrayBuffer;
+// public   url: string | ArrayBuffer;
   constructor(public projectService:ProjectService) { }
 
   ngOnInit(): void {
@@ -37,12 +38,12 @@ this.loadModels();
     this.projectService.getModel().subscribe((response:any) => {
       this.modelData=response;
       this.selectedModel=response[0];
+      this.loadFAQ();
+      this.loadInputOutputImagesTypes();
     })
   }
 
   selectModel(event) {
-    console.log(this.selectedModel);
-
     this.selectedModel=event;
     this.loadFAQ();
     this.loadInputOutputImagesTypes();
@@ -57,13 +58,13 @@ this.loadModels();
   loadInputOutputImagesTypes() {
     this.selectedModel.inputImagesTypes=[];
     this.selectedModel.outputImagesTypes=[];
-    this.selectedModel.inputImages.map((item) => {
+    this.selectedModel.inputImages && this.selectedModel.inputImages.map((item) => {
       this.projectService.getInputImagesTypeById(item).subscribe((response) => {
         this.selectedModel.inputImagesTypes.push(response);
       })
     })
 
-    this.selectedModel.outputImages.map((item) => {
+    this.selectedModel.outputImages &&  this.selectedModel.outputImages.map((item) => {
       this.projectService.getOutputImagesTypeById(item).subscribe((response) => {
         this.selectedModel.outputImagesTypes.push(response);
       })
@@ -97,6 +98,34 @@ this.loadModels();
     nav: false
   }
 
+  evolve() {
+    console.log("inputimages",this.selectedModel);
+    this.selectedModel.inputImagesTypes.length > 0 && this.selectedModel.inputImagesTypes.map((item,index) => {
+      let data=[];
+      data.push({
+        modelId: this.selectedModel.id,
+        inputImagesTypeId: item.id,
+        imgPath: item.url
+      })
+      if(this.selectedModel.inputImagesTypes.length-1==index) {
+        this.projectService.postInputImages(data).subscribe((response) => {
+          this.getOutput();
+        })
+      }
+    })
+    
+  }
+
+  getOutput() {
+    // for generate fake output images
+    let outputLength=this.selectedModel.outputImages.length;
+    let randomNum=Math.floor(Math.random() * (15 - outputLength)) + 1 ;
+
+    this.projectService.getOutputImages(`_start=${randomNum}&_limit=${outputLength}`).subscribe((response:Image[]) => {
+      this.outputImages=response;
+      console.log(this.outputImages);
+    })
+  }
 
   onSelectFile(event,item) {
     if (event.target.files && event.target.files[0]) {
@@ -108,5 +137,13 @@ this.loadModels();
         item.url = event.target.result;
       }
     }
+  }
+
+  grabImage() {
+    this.selectedModel.inputImagesTypes[0].url=this.outputImages[this.outputImages.length-1].src;
+  }
+
+  selectGalleryImage(url) {
+    this.selectedModel.inputImagesTypes[0].url=url;
   }
 }
