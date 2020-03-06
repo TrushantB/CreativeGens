@@ -123,6 +123,9 @@ a{
             background: darken($bg-button,10%);
         }
 }
+button:focus{
+    outline: 0px auto -webkit-focus-ring-color;
+}
 
 // slider CSS here 
 

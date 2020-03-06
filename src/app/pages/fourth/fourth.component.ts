@@ -90,10 +90,11 @@ this.loadModels();
         items: 3
       },
       940: {
-        items: 50
+        items: 15
+        
       }
     },
-    nav: true
+    nav: false
   }
 
 

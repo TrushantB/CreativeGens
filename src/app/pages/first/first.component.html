@@ -31,7 +31,7 @@
                                 <div class="custom-control custom-checkbox justify-content-center" *ngFor="let item of inputImagesData; let i=index">
                                     <input type="checkbox" class="custom-control-input" id="input{{i}}" [checked]="item.check" (click)="checkInputImages(item,i)">
                                     <label class="custom-control-label" for="input{{i}}" >{{item.name}}</label>
-                                    <i _ngcontent-uuw-c18="" aria-hidden="true" class="fa fa-minus plus-icon dropdown-icon" (click)="removeInputImage(item)"></i>
+                                    <i _ngcontent-uuw-c18="" aria-hidden="true" class="fa fa-times  dropdown-icon" (click)="removeInputImage(item)"></i>
                                 </div>
                                 <div class="add-new">
                                     <input type="text" class="form-control " placeholder="Add New" name="inputImage" [(ngModel)]="inputImage" [ngModelOptions]="{standalone: true}" autocomplete="false"/>
@@ -55,7 +55,7 @@
                                 <div class="custom-control custom-checkbox" *ngFor="let item of outputImagesData; let i=index">
                                     <input type="checkbox" class="custom-control-input" id="output{{i}}" [checked]="item.check" (click)="checkOutputImages(item,i)"  >
                                     <label class="custom-control-label" for="output{{i}}">{{item.name}}</label>
-                                    <i _ngcontent-uuw-c18="" aria-hidden="true" class="fa fa-minus plus-icon dropdown-icon" (click)="removeOutputImage(item)"></i>
+                                    <i _ngcontent-uuw-c18="" aria-hidden="true" class="fa fa-times  dropdown-icon" (click)="removeOutputImage(item)"></i>
                                 </div>
                                 <div class="add-new">
                                     <input type="text" class="form-control " placeholder="Add New" name="outputImage" [(ngModel)]="outputImage" [ngModelOptions]="{standalone: true}" autocomplete="false"/>

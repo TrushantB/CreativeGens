@@ -161,6 +161,24 @@
         5
       ],
       "id": 11
+    },
+    {
+      "modelId": "76",
+      "modelName": "name",
+      "maxInputsize": "6",
+      "maxImaegeSize": "8",
+      "inputImages": [],
+      "outputImages": [],
+      "id": 12
+    },
+    {
+      "modelId": "76",
+      "modelName": "name",
+      "maxInputsize": "6",
+      "maxImaegeSize": "8",
+      "inputImages": [],
+      "outputImages": [],
+      "id": 13
     }
   ],
   "InputImagesDetails": [
@@ -205,35 +223,27 @@
   ],
   "InputImagesType": [
     {
-      "id": 1,
-      "name": "ORIGINAL IMAGE"
+      "name": "sd",
+      "id": 2
     },
     {
-      "id": 2,
-      "name": "SEGMENTED IMAGE"
+      "name": "ty",
+      "id": 3
     },
     {
-      "id": 3,
-      "name": "TEXTURE IMAGE"
+      "name": "ui",
+      "id": 4
     },
     {
-      "id": 4,
-      "name": "SKETCH IMAGE"
+      "name": "vf",
+      "id": 5
     },
     {
-      "name": "draft",
+      "name": "gh",
       "id": 6
     }
   ],
   "OutputImagesType": [
-    {
-      "id": 1,
-      "name": "INTERMIDATE IMAGE"
-    },
-    {
-      "id": 2,
-      "name": "FINAL IMAGE"
-    },
     {
       "name": "a",
       "id": 3
@@ -245,6 +255,14 @@
     {
       "name": "c",
       "id": 5
+    },
+    {
+      "name": "r",
+      "id": 6
+    },
+    {
+      "name": "yt",
+      "id": 7
     }
   ],
   "FAQ": [
