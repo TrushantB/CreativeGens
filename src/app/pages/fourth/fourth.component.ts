@@ -72,25 +72,29 @@ this.loadModels();
 
   customOptions: OwlOptions = {
     loop: true,
+    center: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     margin: 20,
     dots: false,
     navSpeed: 700,
+    autoWidth:true,
     navText: ['<', '>'],
     responsive: {
       0: {
-        items: 1
+        items: 5
       },
       400: {
-        items: 2
+        items: 5
       },
       740: {
-        items: 3
+        items: 5
+
       },
       940: {
-        items: 15
+        
+    items:10,
         
       }
     },

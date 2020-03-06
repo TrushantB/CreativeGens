@@ -151,6 +151,7 @@ button:focus{
         transform: translateY(-50%);
         .owl-item{
             text-align: center;
+            
         }
         .owl-prev{
             left: 20px;  
@@ -172,6 +173,7 @@ button:focus{
             border: 2px solid $primary;
             background-color: $secondary;
         }
+        
     }
     .image-wrapper{
         @include image-wrapper;
@@ -180,6 +182,7 @@ button:focus{
                 @include image-ratio;
             }
     }
+    .slide{
+        margin: 0 auto;
+    }
 }
-
-
