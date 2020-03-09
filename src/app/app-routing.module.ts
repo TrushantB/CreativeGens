@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FirstComponent } from './pages/first/first.component';
-import { SecondComponent } from './pages/second/second.component';
+import { ModelGeneratorComponent } from './pages/model-generator/model-generator.component';
+import { ImageGeneratorComponent } from './pages/image-generator/image-generator.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: FirstComponent
+    component: ModelGeneratorComponent
   },
   {
     path: 'imageGenerator',
-    component: SecondComponent
+    component: ImageGeneratorComponent
   }
 ];
 
