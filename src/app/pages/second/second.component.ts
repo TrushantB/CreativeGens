@@ -103,9 +103,8 @@ this.loadModels();
   }
 
   evolve() {
-    console.log("inputimages",this.selectedModel);
+    let data=[];
     this.selectedModel.inputImagesTypes.length > 0 && this.selectedModel.inputImagesTypes.map((item,index) => {
-      let data=[];
       data.push({
         modelId: this.selectedModel.id,
         inputImagesTypeId: item.id,
@@ -117,7 +116,6 @@ this.loadModels();
         })
       }
     })
-    
   }
 
   getOutput() {
@@ -127,7 +125,6 @@ this.loadModels();
 
     this.projectService.getOutputImages(`_start=${randomNum}&_limit=${outputLength}`).subscribe((response:Image[]) => {
       this.outputImages=response;
-      console.log(this.outputImages);
     })
   }
 
