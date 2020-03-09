@@ -14,6 +14,7 @@ import { from } from 'rxjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { SearchComponent } from './shared/components/search/search.component';  
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { SearchComponent } from './shared/components/search/search.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
     
   ],
   providers: [],
