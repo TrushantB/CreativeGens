@@ -5,7 +5,7 @@
                 <div class="from-group d-flex align-items-center" >
                     <label class="label ">select model : </label>
                     <div class="dropdown">
-                        <button class="btn primary-dropdown dropdown-group " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn primary-dropdown dropdown-group " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="selectedModel">
                             {{selectedModel.modelName}} <i class="fa fa-chevron-down dropdown-icon" aria-hidden="true"></i>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -28,7 +28,7 @@
           <ng-template carouselSlide  >
             <div class="slide text-center" style="max-width: 250PX; ">
               <div class="image-wrapper">
-                <img [src]="image.src" [alt]="image.alt" >
+                <img [src]="image.src" [alt]="image.alt" > 
               </div>
               <button class="button" (click)="selectGalleryImage(image.src)">
                 Select
