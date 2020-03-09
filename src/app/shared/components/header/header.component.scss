@@ -13,7 +13,11 @@
             a{
                 span{ 
                     height: 80px;
-                    width: 67px;
+                    width: 90px;
+                        img{
+                            height: 80px;
+                            width: 90px;
+                        }
                 }
             }
         }
@@ -24,7 +28,7 @@
                     .nav-link{
                         text-transform: capitalize;
                         color: $primary;
-                        font-size: 12px;
+                        font-size: 14px;
                             &:hover{
                                 color: darken($primary, 10%);
                             }

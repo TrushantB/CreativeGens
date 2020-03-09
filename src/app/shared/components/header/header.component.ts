@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SharedService } from 'src/app/core/services/shared.service';
+
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sharedService:SharedService) {}
 
   ngOnInit(): void {
   }
 
+  
+  
 }

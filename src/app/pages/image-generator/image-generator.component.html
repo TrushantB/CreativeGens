@@ -1,3 +1,5 @@
+<app-loading></app-loading>
+
 <div class="pt-4 pb-4">
     <div class="container mb-3">
         <div class="select-model-section d-flex align-items-start pb-2">
@@ -32,7 +34,7 @@
                     <label for="modal__state" class="modal__overlay-close">
                         <i  class="fa fa-times"></i>
                     </label>
-                    <app-faq *ngIf="selectedModel" [modelId]="selectedModel.modelId"></app-faq>
+                    <app-faq *ngIf="selectedModel" [FAQData]="selectedModel.FAQ"></app-faq>
                 </div>
             </div>
         </div>  
@@ -48,14 +50,13 @@
                                 <label class="label mr-2">file:</label>
                                 <div class="upload-image-button">
                                     <span>upload image</span>
-                                    <input type="file" name="myfile" />
+                                    <input type="file" name="myfile" (change)="onSelectFile($event,item)"/>
                                     <i class="fa fa-cloud-upload upload-icon" aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div class="image empty-section upload-btn-wrapper d-flex">
                                 <div class="upload-image-button d-flex justify-content-center align-items-center position-absolute h-100 p-0 w-100">
                                     <span> <i class="fa fa-cloud-upload upload-icon position-relative" aria-hidden="true"></i> upload image </span>
-                                    <!-- <i class="fa fa-cloud-upload upload-icon position-relative" aria-hidden="true"></i>  -->
                                     <img src="{{item.url ? item.url :''}}"/><br/>
                                     <input type='file' (change)="onSelectFile($event,item)">
 
@@ -85,13 +86,13 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-8">
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-4 mb-4 justify-content-end"  *ngFor="let item of outputImages">
+                        <div class="col-4 mb-4 justify-content-end"  *ngFor="let item of outputImages; let i=index">
                             <div class="image">
                                 <img [src]="item.src" alt="output image" title="image"/>
                             </div>
                             <div class="text-center mt-2">
                                 <a href="{{item.src}}" target="_blank" class="download-text" download>
-                                    {{item.name}} <i class="fa fa-download ml-2" aria-hidden="true"></i>
+                                    {{selectedModel.outputImagesTypes[i].name}} <i class="fa fa-download ml-2" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div> 

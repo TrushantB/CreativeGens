@@ -7,14 +7,11 @@ import { ProjectService } from 'src/app/core/services/project.service';
   styleUrls: ['./faq.component.scss']
 })
 export class FAQComponent implements OnInit {
-  @Input('modelId') modelId;
-  public FAQData=[];
+  @Input('FAQData') FAQData;
   constructor(public projectService:ProjectService) { }
 
   ngOnInit(): void {
-    this.projectService.getFAQByModelId(this.modelId).subscribe((response:any[]) => {
-      this.FAQData=response;
-     })
+    
   }
 
 }

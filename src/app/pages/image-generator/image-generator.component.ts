@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/core/services/project.service';
+import { SharedService } from 'src/app/core/services/shared.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 interface Image {
   id?:number,
@@ -21,7 +23,9 @@ export class ImageGeneratorComponent implements OnInit {
   public modelData=[];
   public selectedModel=null;
   // public   url: string | ArrayBuffer;
-    constructor(public projectService:ProjectService) { }
+  constructor(public projectService:ProjectService,public sharedService:SharedService) { 
+    this.sharedService.showingSpinner();
+  }
   
     ngOnInit(): void {
     this.loadModels();
@@ -29,6 +33,7 @@ export class ImageGeneratorComponent implements OnInit {
    this.projectService.getGallery().subscribe((response:Image[]) => {
      this.imagesDataStore=response;
      this.imagesData=response;
+     this.sharedService.hidingSpinner();
    })
     }
   
@@ -42,7 +47,10 @@ export class ImageGeneratorComponent implements OnInit {
     }
   
     selectModel(event) {
+      this.sharedService.showingSpinner();
       this.selectedModel=event;
+      console.log(this.selectedModel);
+      
       this.loadFAQ();
       this.loadInputOutputImagesTypes();
     }
@@ -50,39 +58,48 @@ export class ImageGeneratorComponent implements OnInit {
     loadFAQ() {
      this.projectService.getFAQByModelId(this.selectedModel.modelId).subscribe((response) => {
       this.selectedModel.FAQ=response;
+      console.log(response);
+      
+      this.sharedService.hidingSpinner();
      })
     }
   
     loadInputOutputImagesTypes() {
+      this.sharedService.showingSpinner();
       this.selectedModel.inputImagesTypes=[];
       this.selectedModel.outputImagesTypes=[];
       this.selectedModel.inputImages && this.selectedModel.inputImages.map((item) => {
         this.projectService.getInputImagesTypeById(item).subscribe((response) => {
           this.selectedModel.inputImagesTypes.push(response);
+          this.sharedService.hidingSpinner();
         })
       })
   
       this.selectedModel.outputImages &&  this.selectedModel.outputImages.map((item) => {
         this.projectService.getOutputImagesTypeById(item).subscribe((response) => {
           this.selectedModel.outputImagesTypes.push(response);
+          this.sharedService.hidingSpinner();
         })
       })
     }
   
    
     evolve() {
+      this.sharedService.showingSpinner();
       let data=[];
+      let element = {};
       this.selectedModel.inputImagesTypes.length > 0 && this.selectedModel.inputImagesTypes.map((item,index) => {
-        data.push({
-          modelId: this.selectedModel.id,
-          inputImagesTypeId: item.id,
-          imgPath: item.url
-        })
-        if(this.selectedModel.inputImagesTypes.length-1==index) {
-          this.projectService.postInputImages(data).subscribe((response) => {
-            this.getOutput();
-          })
+        
+         element = {
+          name:item.name,
+          imagePath:item.imagePath,
         }
+        this.projectService.postInputImages(element).subscribe((response) => {
+          data.push(response)
+          if(this.selectedModel.inputImagesTypes.length==data.length) {
+            this.getOutput();
+          }
+        })
       })
     }
   
@@ -93,6 +110,7 @@ export class ImageGeneratorComponent implements OnInit {
   
       this.projectService.getOutputImages(`_start=${randomNum}&_limit=${outputLength}`).subscribe((response:Image[]) => {
         this.outputImages=response;
+        this.sharedService.hidingSpinner();
       })
     }
   
@@ -101,8 +119,10 @@ export class ImageGeneratorComponent implements OnInit {
         var reader = new FileReader();
   
         reader.readAsDataURL(event.target.files[0]); // read file as data url
-  
+         item.imagePath=event.target.files[0].name;
+         
         reader.onload = (event) => { // called once readAsDataURL is completed
+          
           item.url = event.target.result;
         }
       }
@@ -114,6 +134,8 @@ export class ImageGeneratorComponent implements OnInit {
   
     selectGalleryImage(url) {
       this.selectedModel.inputImagesTypes[0].url=url;
+      this.selectedModel.inputImagesTypes[0].imagePath=url;
+
     }
   }
   

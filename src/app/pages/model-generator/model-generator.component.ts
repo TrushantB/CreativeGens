@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ProjectService } from 'src/app/core/services/project.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/core/services/shared.service';
 @Component({
   selector: 'app-model-generator',
   templateUrl: './model-generator.component.html',
@@ -21,7 +22,9 @@ export class ModelGeneratorComponent implements OnInit {
   public outputImagesId=[];
  
  //  public inputImageFlag:boolean=false;
-   constructor(public http:HttpClient,public projectService: ProjectService, public router: Router) { }
+   constructor(public http:HttpClient,public projectService: ProjectService, public router: Router,public sharedService:SharedService) { 
+    this.sharedService.showingSpinner();
+   }
  
    ngOnInit(): void {
  
@@ -34,20 +37,23 @@ export class ModelGeneratorComponent implements OnInit {
  
      this.projectService.getInputImagesType().subscribe((response:any) => {
        this.inputImagesData=response;
+       this.sharedService.hidingSpinner();
      })
  
      this.projectService.getOutputImagesType().subscribe((response:any) => {
        this.outputImagesData=response;
+       this.sharedService.hidingSpinner();
      })
     
    }
    submit() {
      this.validateModel.valid;
      if(this.validateModel.valid) {
+      this.sharedService.showingSpinner();
        this.FAQData.map((item) => {
          item.modelId=this.validateModel.get('modelId').value;
+         this.projectService.postFAQ(item).subscribe();
        })
-       this.projectService.postFAQ(this.FAQData).subscribe();
  
        let item={
          modelId: this.validateModel.get('modelId').value,
@@ -61,6 +67,7 @@ export class ModelGeneratorComponent implements OnInit {
        this.projectService.postModel(item).subscribe((response) => {
           console.log("model register successfully");
           this.validateModel.reset();
+          this.sharedService.hidingSpinner();
           this.router.navigate(['./imageGenerator']);
        })
  
@@ -102,29 +109,37 @@ export class ModelGeneratorComponent implements OnInit {
  
    addInputImage() {
      if(this.inputImage) {
+      this.sharedService.showingSpinner();
        this.projectService.postInputImagesType({name:this.inputImage}).subscribe((response) => {
          this.inputImagesData.push(response);
          this.inputImage='';
+         this.sharedService.hidingSpinner();
        });
      }
    }
  
    removeInputImage(item) {
+    this.sharedService.showingSpinner();
        this.projectService.deleteInputImagesType(item.id).subscribe((response) => {
          this.inputImagesData.splice(this.inputImagesData.indexOf(item),1);
+         this.sharedService.hidingSpinner();
        });
    }
    removeOutputImage(item) {
+    this.sharedService.showingSpinner();
      this.projectService.deleteOutputImagesType(item.id).subscribe((response) => {
        this.outputImagesData.splice(this.outputImagesData.indexOf(item),1);
+       this.sharedService.hidingSpinner();
      });
  }
  
    addOutputImage() {
      if(this.outputImage) {
+      this.sharedService.showingSpinner();
        this.projectService.postOutputImagesType({name:this.outputImage}).subscribe((response) => {
          this.outputImagesData.push(response);
          this.outputImage='';
+         this.sharedService.hidingSpinner();
        });
      }
    }
@@ -141,8 +156,5 @@ export class ModelGeneratorComponent implements OnInit {
    removeFAQ(item) {
      this.FAQData.splice(this.FAQData.indexOf(item),1);
    }
- 
-   
- 
  }
  
