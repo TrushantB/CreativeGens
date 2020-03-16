@@ -84,9 +84,9 @@
                 output
             </div>
             <div class="row align-items-center justify-content-center">
-                <div class="col-8">
+                <div class="col-12">
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-4 mb-4 justify-content-end"  *ngFor="let item of outputImages; let i=index">
+                        <div class="col-3 mb-4 justify-content-end"  *ngFor="let item of outputImages; let i=index">
                             <div class="image">
                                 <img [src]="item.src" alt="output image" title="image"/>
                             </div>
@@ -96,7 +96,7 @@
                                 </a>
                             </div>
                         </div> 
-                        <div class="col-4">
+                        <div class="col-3">
                             <div class="d-flex align-items-center justify-content-center flex-column">
                                 <div class="sm-heading text-center mb-1">
                                     grab generaited image as input for next model?

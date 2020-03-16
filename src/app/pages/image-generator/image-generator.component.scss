@@ -41,6 +41,7 @@
     overflow: hidden;
     cursor: pointer;
     display: inline-block;
+    
         .upload-image-button {
             color: $primary;
             background-color: $secondary;
@@ -65,6 +66,7 @@
             left: 0;
             top: 0;
             opacity: 0;
+            cursor: pointer;
         }
 }
 .download-text{
@@ -85,8 +87,10 @@
 .image{
     @include image-wrapper;
     padding-bottom: 130%;
+    border: 1px solid #ffffff8c;
         img{
             @include image-ratio;
+            text-indent: -10000px;
         }
 }
 .output-section{
@@ -140,6 +144,7 @@ input::placeholder{
 .faqs-button{
     // margin-left: 40px;
     color: $secondary-text;
+    cursor: pointer;
     font-weight: bold;
     letter-spacing: 1px;
     background: $secondary;
@@ -198,11 +203,11 @@ input::placeholder{
 }
 .modal__overlay-close {
     position: absolute;
-    right: 0px;
+    right: -3px;
     cursor: pointer;
-    top: 0px;
+    top: 3px;
     width: 20px;
-    font-size: 18px;
+    font-size: 14px;
     margin: 0 auto;
 }
 .modal__state {
@@ -235,11 +240,15 @@ input::placeholder{
             padding-bottom: 3px;
             height: 202px;
             overflow: auto;
+            text-transform: capitalize;
             .que-ans{
                 border-bottom: 1px solid #ffffff9e;
                 padding: 10px 0;
                 .question{
                     margin-bottom: 5px;
+                }
+                .text{
+                    text-transform: capitalize;
                 }
                 .icon{
                     border: 1px solid;
