@@ -87,19 +87,21 @@ export class ImageGeneratorComponent implements OnInit {
     evolve() {
       this.sharedService.showingSpinner();
       let data=[];
-      let element = {};
       this.selectedModel.inputImagesTypes.length > 0 && this.selectedModel.inputImagesTypes.map((item,index) => {
-        
-         element = {
-          name:item.name,
-          imagePath:item.imagePath,
-        }
-        this.projectService.postInputImages(element).subscribe((response) => {
-          data.push(response)
-          if(this.selectedModel.inputImagesTypes.length==data.length) {
-            this.getOutput();
-          }
+        data.push({
+          imageTypeId:item.id,
+          imagePath:item.url
         })
+
+        if(index == this.selectedModel.inputImagesTypes.length - 1) {
+         let element= {
+             modelId:this.selectedModel.id,
+             imputDetails:data
+          }
+          this.projectService.postInputImages(element).subscribe((response) => {
+              this.getOutput();
+          })
+        }
       })
     }
   
