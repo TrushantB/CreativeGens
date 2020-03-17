@@ -90,6 +90,7 @@ export class ImageGeneratorComponent implements OnInit {
       this.selectedModel.inputImagesTypes.length > 0 && this.selectedModel.inputImagesTypes.map((item,index) => {
         data.push({
           imageTypeId:item.id,
+          imageType:item.name,
           imagePath:item.url
         })
 
@@ -98,8 +99,9 @@ export class ImageGeneratorComponent implements OnInit {
              modelId:this.selectedModel.id,
              imputDetails:data
           }
-          this.projectService.postInputImages(element).subscribe((response) => {
-              this.getOutput();
+          this.projectService.postInputImages(element).subscribe((response:any) => {
+              // this.getOutput();
+              this.outputImages=response;
           })
         }
       })
